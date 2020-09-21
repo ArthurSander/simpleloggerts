@@ -7,8 +7,11 @@ export class JsonLogger implements ILogger {
 
     private readonly _path: string;
 
-    public constructor(path: string) {
-        this._path = path;
+    public constructor(path: string, createLogFolder: boolean = false) {
+        if(createLogFolder)
+            this._path = path + '\\logs';
+        else
+            this._path = path;
     }
 
     public log(data: any, filenamePrefix: string = "generic"): void {
