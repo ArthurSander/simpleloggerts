@@ -1,9 +1,9 @@
 import { ILogger } from "./Interfaces/ILogger";
-import { Logger } from "./Logger";
+import { BaseLogger } from "./BaseLogger";
 
 const fs = require('fs');
 
-export class JsonLogger extends Logger implements ILogger {
+export class JsonLogger extends BaseLogger implements ILogger {
 
     public constructor(path: string, createLogFolder: boolean = false) {
         super(path, createLogFolder);
